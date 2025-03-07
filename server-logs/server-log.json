@@ -1,0 +1,40 @@
+[
+  {
+    "timestamp": "2025-03-07T15:12:54.039Z",
+    "method": "POST",
+    "url": "/submit",
+    "headers": {
+      "user-agent": "vscode-restclient",
+      "content-type": "application/json",
+      "accept-encoding": "gzip, deflate",
+      "content-length": "62",
+      "host": "localhost:3000",
+      "connection": "close"
+    },
+    "body": {
+      "name": "Fire Boy",
+      "message": "Hello, Server!"
+    },
+    "responseStatus": 201,
+    "durationMs": 6
+  },
+  {
+    "timestamp": "2025-03-07T15:13:01.097Z",
+    "method": "POST",
+    "url": "/submit",
+    "headers": {
+      "user-agent": "vscode-restclient",
+      "content-type": "application/json",
+      "accept-encoding": "gzip, deflate",
+      "content-length": "62",
+      "host": "localhost:3000",
+      "connection": "close"
+    },
+    "body": {
+      "name": "Fire Boy",
+      "message": "Hello, Server!"
+    },
+    "responseStatus": 201,
+    "durationMs": 5
+  }
+]

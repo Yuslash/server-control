@@ -1,0 +1,8 @@
+### Send a POST request to the server
+POST http://localhost:3000/submit
+Content-Type: application/json
+
+{
+    "name": "Fire Boy",
+    "message": "Hello, Server!"
+}

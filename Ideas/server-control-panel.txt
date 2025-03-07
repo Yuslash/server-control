@@ -1,0 +1,7 @@
+the app opens 
+we have options like
+1. add Projects
+2. the projects file list
+3. click's on the project if you have installed then it won't show install instead it will show run if not then 'Install'
+4. list of project click one and it will show the Run to run the projects
+5. dashboard to show like showing logs of the server such as health, status code, http method, request info, response info, route like
