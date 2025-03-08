@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2025-03-08T13:41:12.752Z",
+    "timestamp": "2025-03-08T13:54:09.511Z",
     "method": "GET",
     "url": "/",
     "headers": {
@@ -11,6 +11,7 @@
     },
     "body": {},
     "responseStatus": 200,
-    "durationMs": 7
+    "responseBody": "{\"message\":\"Welcome to the server\"}",
+    "durationMs": 5
   }
 ]

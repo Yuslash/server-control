@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "name": "Fire Boy",
-    "message": "Hello, Server!"
+    "message": "Ennada Panra venna"
 }
 
 ### get the request you dumb shit

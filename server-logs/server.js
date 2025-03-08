@@ -12,6 +12,13 @@ app.use((req, res, next) => {
     const start = Date.now()
     const { method, url, headers, body } = req
 
+    // Override `res.send` to capture response body
+    let oldSend = res.send
+    res.send = function (data) {
+        res.locals.responseBody = data
+        oldSend.apply(res, arguments)
+    }
+
     res.on('finish', () => { // Fires only once when response is sent
         const logEntry = {
             timestamp: new Date().toISOString(),
@@ -20,6 +27,7 @@ app.use((req, res, next) => {
             headers,
             body,
             responseStatus: res.statusCode,
+            responseBody: res.locals.responseBody, // Capture response data
             durationMs: Date.now() - start
         }
 

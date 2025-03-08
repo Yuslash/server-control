@@ -54,7 +54,8 @@ onBeforeUnmount(() => {
     <ul v-if="fileContent.length > 0">
       <li v-for="(log, index) in fileContent" :key="index">
         <strong>Method:</strong> {{ log.method }} -
-        <strong>Status:</strong> {{ log.responseStatus }}
+        <strong>Status:</strong> {{ log.responseStatus }} - 
+        <strong>Response:</strong> {{ JSON.parse(log.responseBody).message || JSON.parse(log.responseBody).data?.message }}
       </li>
     </ul>
   </div>
