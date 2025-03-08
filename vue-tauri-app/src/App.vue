@@ -1,26 +1,49 @@
 <script setup>
 import { invoke } from "@tauri-apps/api/core";
-import { onMounted, ref } from 'vue';
+import { listen } from "@tauri-apps/api/event";
+import { onMounted, ref, onBeforeUnmount } from 'vue';
 
 const message = ref("Loading...")
 const fileContent = ref([])
 
+let unlisten = null;
+
 const readUserFile = async () => {
-  const jsonString = await invoke("read_file")
-  fileContent.value = JSON.parse(jsonString)
-}
+  try {
+    const jsonString = await invoke("read_file");
+    fileContent.value = JSON.parse(jsonString);
+  } catch (error) {
+    console.error("Error reading file:", error);
+  }
+};
 
 const greetUser = async () => {
-
   message.value = await invoke("greet", { name: "fire boy" });
+};
 
-}
+onMounted(async () => {
+  await greetUser();
+  await readUserFile();
+  
+  // Add error handling for the listener
+  try {
+    unlisten = await listen('log_updated', (event) => {
+      try {
+        fileContent.value = JSON.parse(event.payload);
+      } catch (parseError) {
+        console.error("Error parsing JSON:", parseError);
+      }
+    });
+  } catch (listenError) {
+    console.error("Error setting up listener:", listenError);
+  }
+});
 
-onMounted(() => {
-  greetUser()
-  readUserFile()
-})
-
+onBeforeUnmount(() => {
+  if (unlisten) {
+    unlisten();
+  }
+});
 </script>
 
 
