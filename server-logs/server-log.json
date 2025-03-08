@@ -36,5 +36,77 @@
     },
     "responseStatus": 201,
     "durationMs": 5
+  },
+  {
+    "timestamp": "2025-03-08T09:26:48.734Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "vscode-restclient",
+      "accept-encoding": "gzip, deflate",
+      "host": "localhost:7000",
+      "connection": "close"
+    },
+    "body": {},
+    "responseStatus": 200,
+    "durationMs": 4
+  },
+  {
+    "timestamp": "2025-03-08T09:27:27.831Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "vscode-restclient",
+      "accept-encoding": "gzip, deflate",
+      "host": "localhost:7245",
+      "connection": "close"
+    },
+    "body": {},
+    "responseStatus": 200,
+    "durationMs": 5
+  },
+  {
+    "timestamp": "2025-03-08T09:57:02.365Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "vscode-restclient",
+      "accept-encoding": "gzip, deflate",
+      "host": "localhost:7245",
+      "connection": "close"
+    },
+    "body": {},
+    "responseStatus": 200,
+    "durationMs": 5
+  },
+  {
+    "timestamp": "2025-03-08T10:01:47.818Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "PostmanRuntime/7.43.0",
+      "accept": "*/*",
+      "postman-token": "996e61d5-7595-437a-9093-dcbbaee363ac",
+      "host": "localhost:5000",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive"
+    },
+    "body": {},
+    "responseStatus": 200,
+    "durationMs": 8
+  },
+  {
+    "timestamp": "2025-03-08T10:01:53.216Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "vscode-restclient",
+      "accept-encoding": "gzip, deflate",
+      "host": "localhost:5000",
+      "connection": "close"
+    },
+    "body": {},
+    "responseStatus": 200,
+    "durationMs": 4
   }
 ]

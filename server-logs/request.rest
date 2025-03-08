@@ -1,8 +1,11 @@
 ### Send a POST request to the server
-POST http://localhost:3000/submit
+POST http://localhost:5000/submit
 Content-Type: application/json
 
 {
     "name": "Fire Boy",
     "message": "Hello, Server!"
 }
+
+### get the request you dumb shit
+GET http://localhost:5000/
