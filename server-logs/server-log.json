@@ -1,17 +1,87 @@
 [
   {
-    "timestamp": "2025-03-08T13:54:09.511Z",
+    "timestamp": "2025-03-08T16:19:43.929Z",
     "method": "GET",
     "url": "/",
     "headers": {
-      "user-agent": "vscode-restclient",
-      "accept-encoding": "gzip, deflate",
+      "user-agent": "PostmanRuntime/7.43.0",
+      "accept": "*/*",
+      "postman-token": "a3d38b2a-93f7-4302-825c-61e3f8620800",
       "host": "localhost:5000",
-      "connection": "close"
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive"
+    },
+    "body": {},
+    "responseStatus": 400,
+    "responseBody": "{\"message\":\"Welcome to why this server\"}",
+    "durationMs": 4
+  },
+  {
+    "timestamp": "2025-03-08T16:19:57.509Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "PostmanRuntime/7.43.0",
+      "accept": "*/*",
+      "postman-token": "fd3c0be2-d86a-45fa-83ef-e2764f6cd5bb",
+      "host": "localhost:5000",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive"
+    },
+    "body": {},
+    "responseStatus": 400,
+    "responseBody": "{\"message\":\"Welcome to why this server\"}",
+    "durationMs": 6
+  },
+  {
+    "timestamp": "2025-03-08T16:19:58.787Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "PostmanRuntime/7.43.0",
+      "accept": "*/*",
+      "postman-token": "c3158a9c-4f56-4527-84e0-a5ea8f59f494",
+      "host": "localhost:5000",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive"
+    },
+    "body": {},
+    "responseStatus": 400,
+    "responseBody": "{\"message\":\"Welcome to why this server\"}",
+    "durationMs": 6
+  },
+  {
+    "timestamp": "2025-03-08T16:20:14.896Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "PostmanRuntime/7.43.0",
+      "accept": "*/*",
+      "postman-token": "22c86fbf-67c4-4aaf-9ffe-50830832333e",
+      "host": "localhost:5000",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive"
     },
     "body": {},
     "responseStatus": 200,
-    "responseBody": "{\"message\":\"Welcome to the server\"}",
+    "responseBody": "{\"message\":\"Welcome to why this server\"}",
+    "durationMs": 10
+  },
+  {
+    "timestamp": "2025-03-08T16:20:19.498Z",
+    "method": "GET",
+    "url": "/",
+    "headers": {
+      "user-agent": "PostmanRuntime/7.43.0",
+      "accept": "*/*",
+      "postman-token": "85a83f67-9162-4161-aaf4-65df2221b258",
+      "host": "localhost:5000",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive"
+    },
+    "body": {},
+    "responseStatus": 200,
+    "responseBody": "{\"message\":\"Welcome to why this server\"}",
     "durationMs": 5
   }
 ]

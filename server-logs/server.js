@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 
 // Sample routes
 app.get('/', (req, res) => {
-    res.send({ message: 'Welcome to the server' })
+    res.send({ message: 'Welcome to why this server' })
 })
 
 app.post('/submit', (req, res) => {
