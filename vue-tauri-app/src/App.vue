@@ -3,7 +3,7 @@ import { invoke } from "@tauri-apps/api/core";
 import { onMounted, ref } from 'vue';
 
 const message = ref("Loading...")
-const fileContent = ref("Loading...")
+const fileContent = ref([])
 
 const readUserFile = async () => {
   const jsonString = await invoke("read_file")
@@ -28,7 +28,12 @@ onMounted(() => {
   <div id="app" class="text-white h-screen justify-center items-center flex flex-col gap-2">
     <span>{{ message }}</span>
     <h1>here will be the file content!:</h1>
-    <div>{{ fileContent }}</div>
+    <ul v-if="fileContent.length > 0">
+      <li v-for="(log, index) in fileContent" :key="index">
+        <strong>Method:</strong> {{ log.method }} -
+        <strong>Status:</strong> {{ log.responseStatus }}
+      </li>
+    </ul>
   </div>
 </template>
 

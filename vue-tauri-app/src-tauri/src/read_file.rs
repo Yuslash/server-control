@@ -2,6 +2,8 @@ use std::fs;
 use std::path::PathBuf;
 
 #[tauri::command]
-pub fn read_file(file_path: String) -> String {
-    fs::read_to_string(PathBuf::from("../server-logs/server-logs.json")).unwrap()
+pub fn read_file() -> String {
+    let path = PathBuf::from("D:/Project Control panel/server-logs/server-log.json");
+
+    fs::read_to_string(path).unwrap()
 }
