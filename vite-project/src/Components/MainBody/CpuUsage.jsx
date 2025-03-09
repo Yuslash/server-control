@@ -1,57 +1,41 @@
-import { app, BrowserWindow, Menu, screen, ipcMain } from 'electron'
-import path from 'path'
-import { fileURLToPath } from 'url'
-import si from 'systeminformation'
-import os from 'os'
+import { useState, useEffect } from "react"
+const { ipcRenderer } = window.require("electron") // ✅ Import IPC Renderer
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+export default function CpuUsage() {
+    const [cpuLoad, setCpuLoad] = useState(0)
 
-let mainWindow
+    useEffect(() => {
+        const fetchCpuUsage = async () => {
+            const load = await ipcRenderer.invoke("get-cpu-usage")
+            setCpuLoad(load)
+        }
 
-app.whenReady().then(() => {
-  const { width, height } = screen.getPrimaryDisplay().workAreaSize
+        fetchCpuUsage()
+        const interval = setInterval(fetchCpuUsage, 1000) // Update every second
 
-  mainWindow = new BrowserWindow({
-    width,
-    height,
-    frame: true,
-    webPreferences: { nodeIntegration: true, contextIsolation: false }
-  })
+        return () => clearInterval(interval) // Cleanup on unmount
+    }, [])
 
-  mainWindow.maximize()
-  Menu.setApplicationMenu(null)
+    return (
+        <div className="system-logs-panel min-w-[331px] min-h-[183px] max-h-[183px] flex flex-col justify-center rounded-lg p-8">
+            <div className="flex gap-3.5 items-center ">
+                <img className="w-8 h-8 object-cover" src="/cpu-svgrepo-com.svg" />
+                <span className="panel-title">CPU Usage</span>
+            </div>
 
-  const devServerUrl = 'http://localhost:5173'
-  if (process.env.NODE_ENV === 'development') {
-    mainWindow.loadURL(devServerUrl)
-  } else {
-    mainWindow.loadFile(path.join(__dirname, 'dist', 'index.html'))
-  }
+            <div className="flex items-center justify-center w-full gap-2.5">
+                <div className="flex items-end">
+                    <span className="cpu-percentage">{cpuLoad}</span>
+                    <p className="cpu-symbol-percentage">%</p>
+                </div>
 
-  mainWindow.on('closed', () => { mainWindow = null })
-})
-
-ipcMain.handle('get-cpu-usage', async () => {
-  const load = await si.currentLoad()
-  return load.currentLoad.toFixed(2)
-})
-
-ipcMain.handle('get-ram-usage', async () => {
-  const memData = await si.mem()
-  return ((memData.active / memData.total) * 100).toFixed(2)
-})
-
-ipcMain.handle('get-ip-address', async () => {
-  const nets = os.networkInterfaces()
-  for (const name of Object.keys(nets)) {
-    for (const net of nets[name]) {
-      if (!net.internal && net.family === 'IPv4') {
-        return net.address
-      }
-    }
-  }
-  return 'Unknown'
-})
-
-app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit() })
+                <div className={`health-checker text-sm border-1 px-3 py-1 
+                     ${cpuLoad < 50 ? "border-green-500 text-green-500" : 
+                      cpuLoad < 80 ? "border-yellow-500 text-yellow-500" : 
+                      "border-red-500 text-red-500"}`}>
+                    {cpuLoad < 50 ? "Good" : cpuLoad < 80 ? "Moderate" : "High"}
+                </div>
+            </div>
+        </div>
+    )
+}
