@@ -5,7 +5,7 @@ export default function Experience() {
 
     return (
         <div className="w-full h-full flex">
-            <SidePanel />
+            <SidePanel  />
             <MainPanel />
         </div>
     )

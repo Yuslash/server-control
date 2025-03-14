@@ -17,7 +17,7 @@ export default function GpuUsage() {
     }, [])
 
     return (
-        <div className="system-logs-panel min-w-[331px] min-h-[183px] max-h-[183px] flex flex-col justify-center rounded-lg p-8">
+        <div className="system-logs-panel min-w-[331px] min-h-[183px] max-h-[183px] flex flex-col justify-center rounded-lg p-8  transition-all duration-500 ease-in-out">
             <div className="flex gap-3.5 items-center">
                 <img className="w-8 h-8 object-cover" src="/gpu-svgrepo-com.svg" />
                 <span className="panel-title">RAM Usage</span>
@@ -29,10 +29,10 @@ export default function GpuUsage() {
                     <p className="cpu-symbol-percentage">%</p>
                 </div>
 
-                <div className={`health-checker text-sm border px-3 py-1 ${
-                    ramUsage < 50 ? "border-green-500 text-green-500"
-                    : ramUsage < 75 ? "border-yellow-500 text-yellow-500"
-                    : "border-red-500 text-red-500"
+                <div className={` text-sm border px-3 py-1 rounded-full ${
+                    ramUsage < 50 ? "border-green-500 text-green-500 bg-green-500/20"
+                    : ramUsage < 75 ? "border-yellow-500 text-yellow-500 bg-yellow-500/20"
+                    : "border-red-500 text-red-500 bg-red-500/20"
                 }`}>
                     {ramUsage < 50 ? "Good" : ramUsage < 75 ? "Medium" : "High"}
                 </div>

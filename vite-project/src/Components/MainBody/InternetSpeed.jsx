@@ -35,8 +35,8 @@ export default function InternetSpeed() {
             </div>
             <div className="flex gap-3.5 justify-center items-center">
                 <span className="net-speed text-center text-nowrap">{speed ? `${speed} Mbps` : "Checking..."}</span>
-                <div className={`border px-3 py-1 rounded-full text-sm ${
-                    status === "Excellent" ? "border-blue-500 bg-blue-500/20 text-blue-500" :
+                    <div className={`border px-3 py-1 rounded-full text-sm ${
+                        status === "Excellent" ? "border-blue-500 bg-blue-500/20 text-blue-500" :
                     status === "Good" ? "border-green-500 bg-green-500/20 text-green-500" :
                     status === "Average" ? "border-yellow-500 bg-yellow-500/20 text-yellow-500" :
                     "border-red-500 bg-red-500/20 text-red-500"

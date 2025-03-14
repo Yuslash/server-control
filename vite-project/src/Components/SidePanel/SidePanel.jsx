@@ -2,7 +2,7 @@ export default function SidePanel() {
 
     return (
         <>
-            <div className=" h-full min-w-[310px] py-20 flex flex-col justify-start items-center bg-black/10 mr-6">
+            <div className=" h-full min-w-[310px] py-20 flex flex-col justify-start items-center bg-black/10 mr-6 max-xl:hidden">
                 
                 <div className="flex items-center">
                     <img src="/side_panels/Kakrol.svg" />
